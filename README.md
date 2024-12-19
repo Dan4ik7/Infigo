@@ -8,7 +8,7 @@ This section should provide a high-level overview of the project's purpose and g
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#[License](https://github.com/Dan4ik7/Infigo/blob/main/LICENSE))
+- [License](#[License])
 
 ## Features
 Here's a screenshot of our project in action:
@@ -18,3 +18,6 @@ Here's a screenshot of our project in action:
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+
+## License
+This project is licensed under the terms of the [LICENSE](https://github.com/Dan4ik7/Infigo/blob/main/LICENSE).

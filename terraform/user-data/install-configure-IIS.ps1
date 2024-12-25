@@ -1,3 +1,4 @@
+<powershell>
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 Start-Transcript -Path "C:\temp\userdata.log" -Append
 
@@ -97,3 +98,4 @@ New-NetFirewallRule -DisplayName "Allow HTTP on port $websitePort" -Direction In
 Write-Output "Firewall rules added successfully."
 
 Stop-Transcript
+</powershell>

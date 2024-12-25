@@ -114,7 +114,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_rdp" {
 
 ###If you want to access website externaly
 ###Also need to add the code in the script:
-###
+###provides acces to the web from http://<Instance_Pub_IP>:<Port>
 resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_website" {
   description       = "Allwo Website ports"
   security_group_id = aws_security_group.allow_web.id
@@ -147,14 +147,9 @@ resource "aws_eip" "one" {
   depends_on                = [aws_internet_gateway.gw, aws_instance.web-server-instance]
 }
 
-###Option 1 - to expose the website only on localhost
-# data "template_file" "user_data" {
-#   template = file("${path.module}/Script-files/install-configure-IIS.ps1")
-# }
 
-###Option 2 - expose it via Public IP on port 8080
 data "template_file" "user_data" {
-  template = file("${path.module}/Script-files/test.ps1")
+  template = file("${path.module}/user-data/install-configure-IIS.ps1")
 }
 
 resource "aws_instance" "web-server-instance" {

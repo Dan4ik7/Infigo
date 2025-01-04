@@ -1,6 +1,8 @@
 provider "aws" {
-  region = "us-west-1"
+  region = "us-west-2"
 }
+
+
 
 ####To deploy any resource###
 # resource "<provider>_<resource_type>" "name" {
@@ -46,7 +48,7 @@ resource "aws_route_table" "prod-route-table" {
 resource "aws_subnet" "subnet-1" {
   vpc_id            = aws_vpc.prod-vpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-west-1a"
+  availability_zone = "us-west-2a"
 
   tags = {
     Name = "prod-subnet"
@@ -82,6 +84,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_https" {
   from_port         = 443
   ip_protocol       = "tcp"
   to_port           = 443
+  depends_on        = [aws_eip.one]
 }
 resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_http" {
   description       = "HTTP"
@@ -90,6 +93,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_http" {
   from_port         = 80
   ip_protocol       = "tcp"
   to_port           = 80
+  depends_on        = [aws_eip.one]
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_ssh" {
@@ -99,6 +103,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_ssh" {
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
+  depends_on        = [aws_eip.one]
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_rdp" {
@@ -108,6 +113,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_rdp" {
   from_port         = 3389
   ip_protocol       = "tcp"
   to_port           = 3389
+  depends_on        = [aws_eip.one]
 
 }
 
@@ -121,7 +127,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ipv4_website" {
   from_port         = 8080
   ip_protocol       = "tcp"
   to_port           = 8080
-
+  depends_on        = [aws_eip.one]
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
@@ -192,9 +198,9 @@ resource "aws_s3_object" "hyperv_health" {
 }
 
 resource "aws_instance" "web-server-instance" {
-  ami               = "ami-0cbcac25efaba5ebf"
+  ami               = "ami-0e32864a4910bd3a9"
   instance_type     = "t3.medium"
-  availability_zone = "us-west-1a"
+  availability_zone = "us-west-2a"
   key_name          = "windows"
   get_password_data = true
 

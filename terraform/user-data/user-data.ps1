@@ -235,16 +235,18 @@ $jsonReport = [pscustomobject]@{
 } | ConvertTo-Json -Depth 3
 $jsonReport | Out-File -FilePath $jsonReportPath
 
-# Convert data to CSV
+# Convert data to CSV (each data set to its own CSV file)
 $activeTimes.GetEnumerator() | Sort-Object Key | ForEach-Object {
     [pscustomobject]@{ Hour = $_.Key; Requests = $_.Value }
-} | Export-Csv -Path $csvReportPath -Append -NoTypeInformation
+} | Export-Csv -Path "$env:TEMP\ActiveTimes.csv" -NoTypeInformation -Force
+
 $errorSummary.GetEnumerator() | Sort-Object Key | ForEach-Object {
     [pscustomobject]@{ Status = $_.Key; Occurrences = $_.Value }
-} | Export-Csv -Path $csvReportPath -Append -NoTypeInformation
+} | Export-Csv -Path "$env:TEMP\ErrorSummary.csv" -NoTypeInformation -Force
+
 $browserStats.GetEnumerator() | Sort-Object Key | ForEach-Object {
     [pscustomobject]@{ Browser = $_.Key; Users = $_.Value }
-} | Export-Csv -Path $csvReportPath -Append -NoTypeInformation
+} | Export-Csv -Path "$env:TEMP\BrowserStats.csv" -NoTypeInformation -Force
 
 # Generate HTML report
 $htmlReport = @()

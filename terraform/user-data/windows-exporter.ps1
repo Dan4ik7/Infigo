@@ -63,23 +63,23 @@ function IsIISInstalled {
     }
 }
 
-# function IsMSSQLInstalled {
-#     $SQLPath = "HKLM:\Software\Microsoft\Microsoft SQL Server\Instance Names\SQL"
-#     return Test-Path $SQLPath
-# }
+function IsMSSQLInstalled {
+    $SQLPath = "HKLM:\Software\Microsoft\Microsoft SQL Server\Instance Names\SQL"
+    return Test-Path $SQLPath
+}
 
-# function IsHyperVInstalled {
-#     try {
-#         if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq "Enabled") {
-#             return $true
-#         } else {
-#             return $false
-#         }
-#     } catch {
-#         Write-Output "Cannot determine if Hyper-V is installed, do you have admin super powers ?"
-#         exit 1
-#     }
-# }
+function IsHyperVInstalled {
+    try {
+        if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V).State -eq "Enabled") {
+            return $true
+        } else {
+            return $false
+        }
+    } catch {
+        Write-Output "Cannot determine if Hyper-V is installed, do you have admin super powers ?"
+        exit 1
+    }
+}
 
 function IsNT10OrBetter {
     if (([System.Environment]::OSVersion.Version).Major -ge 10) {
@@ -167,12 +167,12 @@ if (IsDomainController) {
 if (IsIISInstalled) {
     $COLLECTORS = $COLLECTORS + $IIS_COLLECTOR
 }
-# if (IsMSSQLInstalled) {
-#     $COLLECTORS = $COLLECTORS + $MSSQL_COLLECTOR
-# }
-# if (IsHyperVInstalled) {
-#     $COLLECTORS = $COLLECTORS + $HYPERV_COLLECTOR
-# }
+if (IsMSSQLInstalled) {
+    $COLLECTORS = $COLLECTORS + $MSSQL_COLLECTOR
+}
+if (IsHyperVInstalled) {
+    $COLLECTORS = $COLLECTORS + $HYPERV_COLLECTOR
+}
 if (IsNT10OrBetter) {
     $COLLECTORS = $COLLECTORS + $2016_AND_NEWER_COLLECTORS
 }

@@ -7,14 +7,55 @@ The task is designed to showcase the skill level in automation, configuration ma
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
+- [Interview-questions](#Interview-questions)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Pre-conditions](#pre-conditions)
 - [Contributing](#contributing)
 - [License](#license)
 
+## Interview-questions:
+1. Provision a New Virtual Machine
+a. Use Terraform (or any preferred IaC tool) to provision a new Windows EC2
+instance on AWS or another cloud provider.
+
+2. Automate Machine Setup
+a. Create an automation process to configure the machine after launch. You
+may use Ansible, user_data scripts, or any other preferred automation tool.
+The automation should achieve the following:
+i. Install IIS and configure it to host a new website.
+ii. Deploy the website from the following repository as a reference:
+https://github.com/AzureWorkshops/samples-simple-iis-website
+iii. Ensure the IIS setup is ready to automatically deploy any .NET
+application in the future.
+3. Install and Configure Prometheus Exporter
+a. Install a Prometheus exporter (e.g., Windows Exporter).
+b. Configure the exporter to expose server metrics on localhost:9090.
+4. Create a Scheduled Task
+a. Implement a scheduled task (should be done automatically when machine
+will start) that runs every 5 minutes to:
+i. Perform an HTTP POST request to send all Prometheus data
+(localhost:9090) to a temporary API endpoint like Pipedream
+RequestBin.
+5. Develop a PowerShell Script
+a. Write a PowerShell script to:
+i. Generate a dump file of the deployed IIS website automatically.
+
+ii. Ensure the script is stored on the VM.
+
+6. Generate IIS Usage Report
+• Based on the logs from IIS, create a script or tool that generates a summary/report
+including:
+o The most active times for the website.
+o A summary of errors encountered (e.g., 404, 500 errors).
+o User browser statistics (e.g., Chrome, Firefox, etc.).
+• Provide the report in a human-readable format, such as JSON, CSV, or an HTML
+page.
+7. Harden the Instance
+• Apply security hardening measures to the instance to make it production-ready.
+
 ## Features
-Here's a screenshot of our project in action:
+The following project is completing all the interview questions mentioned Above with only one terraform apply, and a few pre-requisites
 ![Project Screenshot](![image](https://github.com/user-attachments/assets/5388e0a9-8546-48b3-9779-c0591d78ff3a))
 
 ## Installation

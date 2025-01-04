@@ -77,11 +77,17 @@ This section will describe the Project usage and Installation:
         $env:AWS_ACCESS_KEY_ID="<KEY_ID>"
         $env:AWS_SECRET_ACCESS_KEY="<SECRET_ID>"
         ```
-   4. Apply configurations:
+  4. Apply configurations:
       ```
       terraform plan
       terraform apply --auto-approve
       ```
+  5. Connect to the Instance and Monitor the configuration Process:
+     The terraform has created the security group to allow RDP trafiic. In order to connect to the instance via RDP go to your aws account:
+     EC2 -> Instances -> Click on running instance -> Connect -> Click on RDP Client -> Click on Get Password and upload the .pem file created
+     earlier in key pairs -> Decrypt Password -> Copy Password -> Click on Download Remote Desktop file and login to the EC2:
+     ![image](https://github.com/user-attachments/assets/da3cde43-c00f-4e26-9639-7f32e091fbb5)
+
       
 
 ## Pre-conditions

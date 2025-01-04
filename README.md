@@ -15,7 +15,7 @@ The task is designed to showcase the skill level in automation, configuration ma
 
 ## Features
 Here's a screenshot of our project in action:
-![Project Screenshot](https://example.com/screenshot.png)
+![Project Screenshot](![image](https://github.com/user-attachments/assets/5388e0a9-8546-48b3-9779-c0591d78ff3a))
 
 ## Installation
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)

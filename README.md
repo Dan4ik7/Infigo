@@ -67,11 +67,27 @@ This section will describe the Project usage and Installation:
      ```
      git clone https://github.com/Dan4ik7/Infigo
      ```
+  2. Connect to you AWS account and create a Key-pairs for the instance so you would be able to connect via RDP to the instance
+     Key-Pairs Path: EC2 -> Network & Security -> Key Pairs -> Create a .pem file and download it
+  
+  3. Go to the cloned Repository, inside the terraform folder: Initialize terraform
+     a. First set up your aws Credentials:
+        *For ease of ussage, I have exported the access keys directly in CLI as a environment vars:
+        ```
+        $env:AWS_ACCESS_KEY_ID="<KEY_ID>"
+        $env:AWS_SECRET_ACCESS_KEY="<SECRET_ID>"
+        ```
+   4. Apply configurations:
+      ```
+      terraform plan
+      terraform apply --auto-approve
+      ```
+      
 
 ## Pre-conditions
 - [AWS Account](https://aws.amazon.com/resources/create-account/)
 - [IAM Roles](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
-- [Key Pairs]([https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+- [Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ## Contributing
 Provide guidelines for contributing here.

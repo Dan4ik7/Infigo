@@ -34,15 +34,13 @@ b. Configure the exporter to expose server metrics on localhost:9090.
 4. Create a Scheduled Task
 a. Implement a scheduled task (should be done automatically when machine
 will start) that runs every 5 minutes to:
-i. Perform an HTTP POST request to send all Prometheus data
+b. Perform an HTTP POST request to send all Prometheus data
 (localhost:9090) to a temporary API endpoint like Pipedream
 RequestBin.
 5. Develop a PowerShell Script
 a. Write a PowerShell script to:
-i. Generate a dump file of the deployed IIS website automatically.
-
-ii. Ensure the script is stored on the VM.
-
+  i. Generate a dump file of the deployed IIS website automatically.
+  ii. Ensure the script is stored on the VM.
 6. Generate IIS Usage Report
 • Based on the logs from IIS, create a script or tool that generates a summary/report
 including:
@@ -56,7 +54,7 @@ page.
 
 ## Features
 The following project is completing all the interview questions mentioned Above with only one terraform apply, and a few pre-requisites
-![Project Screenshot](![image](https://github.com/user-attachments/assets/5388e0a9-8546-48b3-9779-c0591d78ff3a))
+![Project Screenshot](![image](https://github.com/user-attachments/assets/5388e0a9-8546-48b3-9779-c0591d78ff3a)
 
 ## Installation
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -69,6 +67,7 @@ The task will be performed in an AWS Cloud Platfrom within an EC2(virtual Machin
 ## Pre-conditions
 - [AWS Account](https://aws.amazon.com/resources/create-account/)
 - [IAM Roles](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
+- [Key Pairs]([https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ## Contributing
 Provide guidelines for contributing here.

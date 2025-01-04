@@ -10,6 +10,7 @@ The task is designed to showcase the skill level in automation, configuration ma
 - [Interview-questions](#Interview-questions)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Description](#Description)
 - [Pre-conditions](#pre-conditions)
 - [Contributing](#contributing)
 - [License](#license)
@@ -87,8 +88,42 @@ This section will describe the Project usage and Installation:
      EC2 -> Instances -> Click on running instance -> Connect -> Click on RDP Client -> Click on Get Password and upload the .pem file created
      earlier in key pairs -> Decrypt Password -> Copy Password -> Click on Download Remote Desktop file and login to the EC2:
      ![image](https://github.com/user-attachments/assets/da3cde43-c00f-4e26-9639-7f32e091fbb5)
+  6. Monitor the Configuration Process - In case for any errors, re-run the user data script which will be available in the
+   **"C:\temp\userdata.ps1"**
 
-      
+  
+## Description
+- The following provisioning and configuration process is fully automated:
+    - Provisioning:
+      - EC2 Windows server allong with it's required resources
+      - S3 Bucket for File upload/downlod - for Grafana
+    - Configuration:
+      - IIS server
+      - Deploys a web app from [Sample App](https://github.com/AzureWorkshops/samples-simple-iis-website)
+      - Exposes the Web APP to the <http:<Instance_PUB_IP>:8080> and localhost:8080
+        ![image](https://github.com/user-attachments/assets/d43a65a1-052d-47fa-be64-2fd963675b24)
+      - Ensures that IIS setup is ready to automatically deploy any .NET application in the future.
+      - Generate a dump file of the deployed IIS webstie
+      - Generates a usage Report provided in: html; csv and json
+        ![image](https://github.com/user-attachments/assets/e46019c4-53fa-4758-af54-d50fc27d4051)
+
+      - Installs Prometheos and Exposes server metrics at localhost:9090
+        ![image](https://github.com/user-attachments/assets/77038dfc-7952-4319-ae96-00dc26c2fd9a)
+        ![image](https://github.com/user-attachments/assets/ff036bff-884f-47e3-a720-afec06f78767)
+        
+      - Creates a Scheduled Task to be run every 5 minutes, that sents the metrics to an API Endpoint like Pipedream:         
+        https://eofnzuh3c3qiljs.m.pipedream.net
+        ![Screenshot 2024-12-27 054129](https://github.com/user-attachments/assets/34e029ec-8c6e-48fe-8cc8-97ef36c5f65b)
+- The Project completes every asspect of the Interview Task:
+- All the Executed Transcript is stored in "C:\temp" directory
+   - Two files: windows-exporter.txt and userdata.txt
+- All the scripts stored in the "C:\temp" directory
+  ![image](https://github.com/user-attachments/assets/d5dce0ae-9721-47c7-b102-0449d60b74a7)
+- The generated dump file is stored in "C:\temp"
+- The Usage Report is stored in "C:\Users\Administrator\AppData\Local\Temp\2"
+  Three Files: IISUsageReport.html; IISUsageReport.csv; IISUsageReport.json
+  ![image](https://github.com/user-attachments/assets/f8be295c-728e-4fcd-b717-48be9971cda5)
+  
 
 ## Pre-conditions
 - [AWS Account](https://aws.amazon.com/resources/create-account/)

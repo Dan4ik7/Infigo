@@ -62,7 +62,11 @@ The following project is completing all the interview questions mentioned Above 
 - [IIS](https://learn.microsoft.com/en-us/iis/)
 
 ## Usage
-The task will be performed in an AWS Cloud Platfrom within an EC2(virtual Machine - windows )
+This section will describe the Project usage and Installation:
+  1. Start with cloning the repository with git:
+     ```
+     git clone https://github.com/Dan4ik7/Infigo
+     ```
 
 ## Pre-conditions
 - [AWS Account](https://aws.amazon.com/resources/create-account/)

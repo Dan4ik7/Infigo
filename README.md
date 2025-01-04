@@ -58,6 +58,12 @@ The following project is completing all the interview questions mentioned Above 
 ![image](https://github.com/user-attachments/assets/023f686b-7071-4c3a-9b3b-cae063a30d64)
 
 
+## Pre-conditions
+- [AWS Account](https://aws.amazon.com/resources/create-account/)
+- [IAM Roles](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
+- [Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+
+
 ## Installation
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
@@ -139,12 +145,6 @@ This section will describe the Project usage and Installation:
   ![image](https://github.com/user-attachments/assets/6eb6e0fd-47ed-43ec-ba92-80b7bd0d3b24)
 
   
-
-
-## Pre-conditions
-- [AWS Account](https://aws.amazon.com/resources/create-account/)
-- [IAM Roles](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
-- [Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ## Contributing
 Provide guidelines for contributing here.

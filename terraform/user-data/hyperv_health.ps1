@@ -1,24 +1,4 @@
 
-<#
-# Windows Hyper-V VM and replication health reporter for windows_exporter
-# 
-# Written by Orsiris de Jong - NetInvent
-# 
-# Changelog
-# 2024-06-14: Exclude replica VM from status
-# 2024-06-08: Initial version
-#
-# Tested on:
-# - Windows Server 2022 with Hyper-V and Hyper-V replication
-#
-# Usage:
-#
-# Setup the path to the text collector directory (defaults to what the windows_exporter MSI installer sets
-# and create a scheduled task to run this script every 5 minutes
-# Run program: powershell.exe
-# Arguments: -ExecutionPolicy Bypass "C:\SCRIPTS\hyperv_health.ps1"
-#
-#>
 
 $TEXT_COLLECTOR_PATH="C:\Program Files\windows_exporter\textfile_inputs"
 

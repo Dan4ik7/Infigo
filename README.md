@@ -125,7 +125,21 @@ This section will describe the Project usage and Installation:
   Three Files: IISUsageReport.html; IISUsageReport.csv; IISUsageReport.json
   ![image](https://github.com/user-attachments/assets/cb9184c9-43ce-4a04-b2fa-d696b6ba2de9)
 
+- Test IIS Ready:
+  After running the script, you can check if IIS is installed by running the following PowerShell command:
+  ```
+  After running the script, you can check if IIS is installed by running the following PowerShell command:
+  ```
+
+  Check the ASP.NET Core Hosting Bundle: Ensure that the ASP.NET Core Hosting Bundle is installed by checking the registry again:
+  ```
+  Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\ASP.NET Core\Shared Framework"
+  ```
+
+  ![image](https://github.com/user-attachments/assets/6eb6e0fd-47ed-43ec-ba92-80b7bd0d3b24)
+
   
+
 
 ## Pre-conditions
 - [AWS Account](https://aws.amazon.com/resources/create-account/)

@@ -55,7 +55,8 @@ page.
 
 ## Features
 The following project is completing all the interview questions mentioned Above with only one terraform apply, and a few pre-requisites
-![Project Screenshot](![image](https://github.com/user-attachments/assets/5388e0a9-8546-48b3-9779-c0591d78ff3a)
+![image](https://github.com/user-attachments/assets/023f686b-7071-4c3a-9b3b-cae063a30d64)
+
 
 ## Installation
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -122,7 +123,8 @@ This section will describe the Project usage and Installation:
 - The generated dump file is stored in "C:\temp"
 - The Usage Report is stored in "C:\Users\Administrator\AppData\Local\Temp\2"
   Three Files: IISUsageReport.html; IISUsageReport.csv; IISUsageReport.json
-  ![image](https://github.com/user-attachments/assets/f8be295c-728e-4fcd-b717-48be9971cda5)
+  ![image](https://github.com/user-attachments/assets/cb9184c9-43ce-4a04-b2fa-d696b6ba2de9)
+
   
 
 ## Pre-conditions

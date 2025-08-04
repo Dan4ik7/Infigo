@@ -15,7 +15,7 @@ The task is designed to showcase the skill level in automation, configuration ma
 - [Contributing](#contributing)
 - [License](#license)
 
-## Interview-questions:
+## Tasks:
 1. Provision a New Virtual Machine
 a. Use Terraform (or any preferred IaC tool) to provision a new Windows EC2
 instance on AWS or another cloud provider.
